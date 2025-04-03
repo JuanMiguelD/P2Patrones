@@ -12,23 +12,25 @@ import jakarta.persistence.Table;
 public class Transaccion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
-    private Long id;
+    private Integer id;
 
-    private String origen;
-    private String destino;
+    private Integer origen;
+    private Integer destino;
     private int monto;
 
-    public Transaccion(String origen, String destino, int monto){
+    public Transaccion(Integer origen, Integer destino, int monto){
         this.origen = origen;
         this.destino = destino;
         this.monto = monto;
     }
 
-    public String getDestino() {
+    public Transaccion(){}
+
+    public Integer getDestino() {
         return destino;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -36,11 +38,11 @@ public class Transaccion {
         return monto;
     }
 
-    public String getOrigen() {
+    public Integer getOrigen() {
         return origen;
     }
 
-    public void setDestino(String destino) {
+    public void setDestino(Integer destino) {
         this.destino = destino;
     }
 

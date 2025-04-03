@@ -1,22 +1,36 @@
 package com.p2.HiloCuentas.classes;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table
+@Table(name = "cuenta")
 public class Cuenta{
 
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(nullable = false)
+    private String nombre; 
+    @Column(nullable = false)
     private int monto;
     
-    public Cuenta(String id, int monto){
+    public Cuenta(Integer id, String nombre, int monto) {
         this.id = id;
+        this.nombre=nombre;
         this.monto = monto;
     }
+    public Cuenta() {}
 
-    public String getId(){
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Integer getId(){
         return (this.id);
     }
 

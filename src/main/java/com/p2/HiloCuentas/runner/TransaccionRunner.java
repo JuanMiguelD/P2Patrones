@@ -31,7 +31,7 @@ public class TransaccionRunner implements CommandLineRunner{
         for(int i=0; i < 400; i++){
             executorService.submit(() ->{
                 try {
-                    transaccionService.transferir("abc", "", 50);
+                    transaccionService.transferir("cbd", "abc", 5);
                     System.out.println("Transaccion exitosa");
                 } catch (Exception e) {
                     System.out.println("Error en la transferencia");
